@@ -1,0 +1,15 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+:root {
+  --color-primary: #cf000f;
+  --color-secondary: #b1b2b2;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-[#161616];
+}
