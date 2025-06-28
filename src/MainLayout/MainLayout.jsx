@@ -11,7 +11,7 @@ const MainLayout = () => {
         <Home />
       </section>
       {/* social links */}
-      <div className="fixed top-1/7 left-10 flex flex-col gap-10 items-center">
+      <div className="fixed lg:top-1/7 lg:left-10 flex-col md:top-1/2 md:left-10 gap-10 items-center hidden lg:flex">
         <div className="bg-secondary h-50 w-[1px]"></div>
         <div className="flex flex-col gap-8 text-2xl">
           <a href="https://github.com/rashikdev" target="_blank">
