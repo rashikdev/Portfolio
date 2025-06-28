@@ -35,7 +35,7 @@ const skills = {
 const Skills = () => {
   return (
     <div className="md:h-[50vh]">
-      <div className="md:text-left text-center mb-20 md:-ml-18">
+      <div className="md:text-left text-center mb-20 lg:-ml-18">
         <h2 className="text-4xl font-bold text-primary">Skills</h2>
         <p className="text-secondary mt-2">Technologies I work with</p>
       </div>
@@ -47,7 +47,7 @@ const Skills = () => {
               {items.map((skill, idx) => (
                 <div
                   key={idx}
-                  className="flex items-center gap-3 bg-white p-4 rounded-lg shadow hover:shadow-md transition"
+                  className="flex items-center gap-3 bg-white p-4 rounded shadow hover:shadow-md transition"
                 >
                   <span className="text-2xl">{skill.icon}</span>
                   <span className="text-black font-medium">

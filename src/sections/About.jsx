@@ -1,5 +1,5 @@
 import React from "react";
-
+import { motion } from "motion/react";
 const About = () => {
   return (
     <div className="lg:w-11/12 p-3 mx-auto h-fit  md:h-[700px] flex md:mt-20">
@@ -8,9 +8,13 @@ const About = () => {
           <img src={null} alt="" />
         </div>
       </div>
-      <div className="flex-1 md:p-10">
+      <div className="flex-1 md:p-10 text-center md:text-left">
         <h2 className="text-4xl font-bold text-primary">About Me</h2>
-        <p className="mt-6 hidden text-secondary md:block leading-8 lg:leading-7">
+        <motion.p
+        initial={{ opacity: 0, scale: 0.7, y: 100 }}
+        whileInView={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ delay: 0.3, duration: 1 }}
+        className="mt-6 hidden text-secondary md:block leading-8 lg:leading-7">
           Hi, I’m Rashik — a frontend developer who loves turning ideas into
           real, usable web experiences. My programming journey started with
           curiosity and late-night Google searches. What began as small tweaks
@@ -30,7 +34,7 @@ const About = () => {
           for new ways to grow — both as a developer and as a person. If you’re
           into clean code, beautiful design, or just want to build something
           cool — let’s connect!
-        </p>
+        </motion.p>
         <p className="mt-6 md:hidden text-secondary">
           Hi, I’m Rashik — a frontend developer who loves building clean,
           responsive, and interactive web interfaces. My journey started with

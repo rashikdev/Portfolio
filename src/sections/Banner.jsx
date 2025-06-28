@@ -1,25 +1,36 @@
 import React from "react";
 import { motion } from "motion/react";
 import { FaFacebookF, FaGithub, FaTwitter } from "react-icons/fa";
-import heroMd from "../assets/heromd.png";
-import heroLg from "../assets/herolg.png";
+import heroMd from "../assets/heromd.webp";
+import heroLg from "../assets/herolg.webp";
 const Banner = () => {
   return (
     <div className="banner h-screen relative">
       {/* for lg */}
-      <img
+      <motion.img
+        initial={{ opacity: 0, x: 100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.3, duration: 1 }}
         className="w-screen h-[700px] lg:h-full object-cover absolute top-20 -right-10 lg:left-1/5 lg:top-0 mx-10 md:hidden hidden lg:block"
         src={heroLg}
         alt=""
       />
       {/* for md */}
-      <img
+      <motion.img
+        initial={{ opacity: 0, x: 100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.3, duration: 1 }}
         className="w-screen h-full object-cover absolute md:top-20 md:-right-10 lg:hidden"
         src={heroMd}
         alt=""
       />
 
-      <div className="absolute lg:bottom-1/7 md:bottom-120 md:space-y-5 -bottom-36 lg:transform -translate-y-1/2 lg:left-40 lg:space-y-8 space-y-3 pl-3 ">
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3, duration: 1 }}
+        className="absolute lg:bottom-1/7 md:bottom-120 md:space-y-5 -bottom-24 lg:transform -translate-y-1/2 lg:left-40 lg:space-y-8 space-y-3 pl-3"
+      >
         <p className="text-lg">Web Developer</p>
         <h1 className="text-4xl md:text-7xl font-bold">
           Rashik <span className="text-primary">.</span>
@@ -54,7 +65,7 @@ const Banner = () => {
           </div>
           <div className="bg-secondary h-40 w-[1px]"></div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

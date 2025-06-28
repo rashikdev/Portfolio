@@ -14,7 +14,10 @@ const Contact = () => {
               <br />
               Bangladesh
             </p>
-            <p className="text-xl font-semibold">+880 1318-142118</p>
+            <p className="text-xl font-semibold">
+              +880 1318-142118{" "}
+              <span className="text-[10px]">( phone/whatsapp )</span>
+            </p>
             <p className="text-gray-400">rashik.webdev@gmail.com</p>
           </div>
         </div>

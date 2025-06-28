@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import Home from "../sections/Home";
 import { FaGithub, FaFacebookF, FaTwitter } from "react-icons/fa";
@@ -6,59 +6,99 @@ import About from "../sections/About";
 import Skills from "../sections/Skills";
 import Projects from "../sections/Projects";
 import Contact from "../sections/Contact";
-
+import { motion } from "motion/react";
 const MainLayout = () => {
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  });
   return (
     <div className="overflow-x-hidden selection:bg-primary selection:text-white">
       <Navbar />
-      <section id="home">
-        <Home />
-      </section>
-      {/* social links */}
-      <div className="fixed lg:top-1/7 lg:left-10 flex-col md:top-1/2 md:left-10 gap-10 items-center hidden lg:flex">
-        <div className="bg-secondary h-50 w-[1px]"></div>
-        <div className="flex flex-col gap-8 text-2xl">
-          <a href="https://github.com/rashikdev" target="_blank">
-            <FaGithub size={30} />
-          </a>
-          <a href="https://facebook.com/" target="_blank">
-            <FaFacebookF size={30} />
-          </a>
-          <a href="https://twitter.com/" target="_blank">
-            <FaTwitter size={30} />
-          </a>
+      {loading ? (
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <h2 className="text-4xl font-bold">
+            <h2 className="loader"></h2>
+          </h2>
         </div>
-        <div className="bg-secondary h-50 w-[1px]"></div>
-      </div>
+      ) : (
+        <>
+          <section id="home">
+            <Home />
+          </section>
+          {/* social links */}
+          <div className="fixed lg:top-1/7 lg:left-10 flex-col md:top-1/2 md:left-10 gap-10 items-center hidden lg:flex">
+            <div className="bg-secondary h-50 w-[1px]"></div>
+            <div className="flex flex-col gap-8 text-2xl">
+              <motion.a
+                initial={{ opacity: 0, x: -100 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.3 }}
+                whileHover={{ scale: 1.3 }}
+                whileTap={{ scale: 0.9 }}
+                href="https://github.com/rashikdev"
+                target="_blank"
+              >
+                <FaGithub size={30} />
+              </motion.a>
+              <motion.a
+                initial={{ opacity: 0, x: -100 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.4 }}
+                whileHover={{ scale: 1.3 }}
+                whileTap={{ scale: 0.9 }}
+                href="https://facebook.com/"
+                target="_blank"
+              >
+                <FaFacebookF size={30} />
+              </motion.a>
+              <motion.a
+                initial={{ opacity: 0, x: -100 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.5 }}
+                whileHover={{ scale: 1.3 }}
+                whileTap={{ scale: 0.9 }}
+                href="https://twitter.com/"
+                target="_blank"
+              >
+                <FaTwitter size={30} />
+              </motion.a>
+            </div>
+            <div className="bg-secondary h-50 w-[1px]"></div>
+          </div>
 
-      {/* about */}
-      <section
-        id="about"
-        className="h-[60vh] md:h-screen flex items-center justify-center"
-      >
-        <About />
-      </section>
+          {/* about */}
+          <section
+            id="about"
+            className="h-[60vh] md:h-[90vh] flex items-center justify-center"
+          >
+            <About />
+          </section>
 
-      {/* skills */}
-      <section
-        id="skills"
-        className="md:h-[70vh] flex items-center justify-center lg:pt-30"
-      >
-        <Skills />
-      </section>
+          {/* skills */}
+          <section
+            id="skills"
+            className="md:h-[30vh] lg:h-[70vh] pt-20 flex items-center justify-center lg:pt-30"
+          >
+            <Skills />
+          </section>
 
-      {/* projects */}
-      <section
-        id="projects"
-        className="lg:pt-35 flex items-center justify-center"
-      >
-        <Projects />
-      </section>
+          {/* projects */}
+          <section
+            id="projects"
+            className="lg:pt-35 flex items-center justify-center"
+          >
+            <Projects />
+          </section>
 
-      {/* contact */}
-      <section id="contact" className=" flex items-center justify-center">
-        <Contact />
-      </section>
+          {/* contact */}
+          <section id="contact" className=" flex items-center justify-center">
+            <Contact />
+          </section>
+        </>
+      )}
     </div>
   );
 };
