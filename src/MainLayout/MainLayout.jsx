@@ -5,6 +5,7 @@ import { FaGithub, FaFacebookF, FaTwitter } from "react-icons/fa";
 import About from "../sections/About";
 import Skills from "../sections/Skills";
 import Projects from "../sections/Projects";
+import Contact from "../sections/Contact";
 
 const MainLayout = () => {
   return (
@@ -37,7 +38,7 @@ const MainLayout = () => {
       >
         <About />
       </section>
-      
+
       {/* skills */}
       <section
         id="skills"
@@ -51,13 +52,12 @@ const MainLayout = () => {
         id="projects"
         className="lg:pt-35 flex items-center justify-center"
       >
-        <Projects/>
+        <Projects />
       </section>
-      <section
-        id="contact"
-        className="h-screen flex items-center justify-center"
-      >
-        <h1 className="text-4xl font-bold">Contact</h1>
+
+      {/* contact */}
+      <section id="contact" className=" flex items-center justify-center">
+        <Contact />
       </section>
     </div>
   );

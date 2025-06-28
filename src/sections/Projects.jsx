@@ -44,7 +44,7 @@ const Projects = ({ project }) => {
   ];
   return (
     <div className="md:mt-30 mt-20 lg:-mt-4">
-      <div className="text-center mb-20">
+      <div className="md:text-left text-center  mb-20">
         <h2 className="text-4xl font-bold text-primary">Projects</h2>
         <p className="text-secondary mt-2 px-8 md:px-0">
           Here are a few things I've been building with passion and coffee.

@@ -35,7 +35,7 @@ const skills = {
 const Skills = () => {
   return (
     <div className="md:h-[50vh]">
-      <div className="text-center mb-20">
+      <div className="md:text-left text-center mb-20 md:-ml-18">
         <h2 className="text-4xl font-bold text-primary">Skills</h2>
         <p className="text-secondary mt-2">Technologies I work with</p>
       </div>
