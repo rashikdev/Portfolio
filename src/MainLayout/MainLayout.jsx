@@ -2,6 +2,8 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Home from "../sections/Home";
 import { FaGithub, FaFacebookF, FaTwitter } from "react-icons/fa";
+import About from "../sections/About";
+import Skills from "../sections/Skills";
 
 const MainLayout = () => {
   return (
@@ -26,14 +28,21 @@ const MainLayout = () => {
         </div>
         <div className="bg-secondary h-50 w-[1px]"></div>
       </div>
-      <section id="about" className="h-screen flex items-center justify-center">
-        <h1 className="text-4xl font-bold">About Me</h1>
+
+      {/* about */}
+      <section
+        id="about"
+        className="h-[60vh] md:h-screen flex items-center justify-center"
+      >
+        <About />
       </section>
+      
+      {/* skills */}
       <section
         id="skills"
-        className="h-screen flex items-center justify-center"
+        className="md:h-[70vh] flex items-center justify-center lg:pt-30"
       >
-        <h1 className="text-4xl font-bold">Skills</h1>
+        <Skills />
       </section>
       <section
         id="projects"
