@@ -5,7 +5,7 @@ const About = () => {
     <div className="lg:w-11/12 p-3 mx-auto h-fit  md:h-[700px] flex md:mt-20">
       <div className="flex-1 p-20 hidden lg:block">
         <div className="w-[80%] h-full border-t-2 border-l-2 border-b-2">
-          <img src="" alt="" />
+          <img src={null} alt="" />
         </div>
       </div>
       <div className="flex-1 md:p-10">
