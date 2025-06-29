@@ -104,7 +104,7 @@ const Projects = () => {
   ];
 
   return (
-    <div className="md:mt-30 mt-20 lg:-mt-4">
+    <div className="md:pt-30 mt-20 lg:-mt-4">
       <div className="md:text-left text-center md:ml-14 mb-20 lg:-ml-0">
         <h2 className="text-4xl font-bold text-primary">Projects</h2>
         <p className="text-secondary mt-2 px-8 md:px-0">

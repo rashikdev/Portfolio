@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Tilt from "react-parallax-tilt";
+import { motion } from "framer-motion";
 
 const ProjectCard = ({ project }) => {
   const [open, setOpen] = useState(false);
@@ -17,78 +19,95 @@ const ProjectCard = ({ project }) => {
   } = project;
 
   return (
-    <div className="min-h-[400px] lg:w-[78vw] p-5 flex flex-col lg:flex-row justify-between items-center gap-5 shadow-2xl rounded-xl">
-      <div className="flex-1 rounded border-l-2 border-primary p-3">
-        <img
-          src={image}
-          alt=""
-          className="pl-3 h-full lg:h-[300px] md:h-[400px] w-full object-cover"
-        />
-      </div>
-
-      <div className="flex-1 flex flex-col justify-between px-3 md:px-7 space-y-6">
-        <h2 className="text-2xl font-bold text-primary">{title}</h2>
-        <p className="text-secondary">{description_small}</p>
-        <ul>
-          {features.map((feature, idx) => (
-            <li key={idx} className="font-semibold">
-              {"=> "}
-              {feature}
-            </li>
-          ))}
-        </ul>
-        <div className="grid grid-cols-3 md:grid-cols-4 gap-3">
-          {stack.map((item, idx) => (
-            <span
-              key={idx}
-              className="bg-primary py-[2px] font-semibold text-center"
-            >
-              {item}
-            </span>
-          ))}
-        </div>
-        <div className="flex gap-2">
-          <button className="px-6 btn border hover:border-primary">
-            <a href={live} target="_blank">
-              Live Demo
-            </a>
-          </button>
-          <div className="dropdown dropdown-center">
-            <div
-              tabIndex={0}
-              role="button"
-              className="btn border hover:border-primary"
-            >
-              Github
-            </div>
-            <ul
-              tabIndex={0}
-              className="dropdown-content menu bg-base-100 rounded-box z-1 w-30 p-2 shadow-sm mt-5 space-y-2"
-            >
-              <li className="bg-gray-600 font-semibold  underline-offset-4 hover:decoration-primary underline">
-                <a href={github.client} target="_blank">
-                  Client Side
-                </a>
-              </li>
-              <li className="bg-zinc-700 font-semibold underline-offset-4 hover:decoration-primary underline">
-                <a href={github.server} target="_blank">
-                  Server Side
-                </a>
-              </li>
-            </ul>
+    <motion.div
+      initial={{ y: 150 }}
+      whileInView={{ y: 0 }}
+      transition={{ duration: 0.8, delay: 0.2 }}
+      className="min-h-[400px] lg:w-[78vw] p-5"
+    >
+      <Tilt
+        tiltMaxAngleX={5}
+        tiltMaxAngleY={5}
+        glareEnable={false}
+        className="w-full shadow-2xl rounded-xl bg-zinc-900"
+      >
+        <div className="flex flex-col lg:flex-row justify-between items-center gap-5 p-5">
+          <div className="flex-1 rounded border-l-2 border-primary p-3">
+            <img
+              src={image}
+              alt=""
+              className="pl-3 h-full lg:h-[300px] md:h-[400px] w-full object-cover rounded"
+            />
           </div>
-          <button
-            onClick={() => setOpen(true)}
-            className="px-6 btn border hover:border-primary"
-          >
-            Details
-          </button>
-        </div>
-      </div>
 
+          <div className="flex-1 flex flex-col justify-between px-3 md:px-7 space-y-6">
+            <h2 className="text-2xl font-bold text-primary">{title}</h2>
+            <p className="text-secondary">{description_small}</p>
+            <ul>
+              {features.map((feature, idx) => (
+                <li key={idx} className="font-semibold">
+                  {"=> "} {feature}
+                </li>
+              ))}
+            </ul>
+            <div className="grid grid-cols-3 md:grid-cols-4 gap-3">
+              {stack.map((item, idx) => (
+                <span
+                  key={idx}
+                  className="bg-primary py-[2px] font-semibold text-center rounded-sm"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+
+            <div className="flex gap-2">
+              <button className="px-6 btn border hover:border-primary">
+                <a href={live} target="_blank" rel="noreferrer">
+                  Live Demo
+                </a>
+              </button>
+              <div className="dropdown dropdown-right">
+                <div
+                  tabIndex={0}
+                  role="button"
+                  className="btn border hover:border-primary"
+                >
+                  Github
+                </div>
+                <ul
+                  tabIndex={0}
+                  className="dropdown-content menu bg-base-100 rounded-box z-1 w-30 p-2 shadow-sm mt-14 space-y-2"
+                >
+                  <li className="bg-zinc-700 font-semibold underline-offset-4 hover:decoration-primary underline">
+                    <a href={github.client} target="_blank" rel="noreferrer">
+                      Client Side
+                    </a>
+                  </li>
+                  {github.server && (
+                    <li className="bg-zinc-700 font-semibold underline-offset-4 hover:decoration-primary underline">
+                      <a href={github.server} target="_blank" rel="noreferrer">
+                        Server Side
+                      </a>
+                    </li>
+                  )}
+                </ul>
+              </div>
+              <button
+                onClick={() => setOpen(true)}
+                className="px-6 btn border hover:border-primary"
+              >
+                Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </Tilt>
+
+      {/* Modal */}
       {open && (
         <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
-          <div className="bg-black p-6 rounded-xl w-full max-w-4xl h-[60vh] shadow-lg relative">
+          <div className="bg-black p-6 rounded-xl w-full max-w-4xl h-[60vh] shadow-lg relative overflow-y-auto">
             <button
               className="absolute top-2 right-2 text-lg font-bold cursor-pointer"
               onClick={() => setOpen(false)}
@@ -100,25 +119,21 @@ const ProjectCard = ({ project }) => {
             <h4 className="font-semibold mt-4">Tech Stack:</h4>
             <p>{project.stack.join(", ")}</p>
             <h4 className="font-semibold mt-4">Challenges:</h4>
-            <p className="text-sm text-secondary">
+            <ul className="text-sm text-secondary list-disc ml-6">
               {challenges.map((challenge, idx) => (
-                <ul key={idx}>
-                  <li>{challenge}</li>
-                </ul>
+                <li key={idx}>{challenge}</li>
               ))}
-            </p>
+            </ul>
             <h4 className="font-semibold mt-4">Improvements:</h4>
-            <p className="text-sm text-secondary">
+            <ul className="text-sm text-secondary list-disc ml-6">
               {improvements.map((improvement, idx) => (
-                <ul key={idx}>
-                  <li>{improvement}</li>
-                </ul>
+                <li key={idx}>{improvement}</li>
               ))}
-            </p>
+            </ul>
           </div>
         </div>
       )}
-    </div>
+    </motion.div>
   );
 };
 

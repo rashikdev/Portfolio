@@ -130,6 +130,12 @@ const Navbar = () => {
             <li className="hover:text-primary" data-target="contact">
               CONTACT
             </li>
+            <motion.button
+              whileTap={{ scale: 0.9 }}
+              className="w-22 py-[4px] text-lg bg-primary hover:bg-black border-1 border-primary cursor-pointer"
+            >
+              Resume
+            </motion.button>
           </ul>
         </motion.div>
       )}

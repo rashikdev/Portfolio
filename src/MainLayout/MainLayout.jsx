@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import Home from "../sections/Home";
-import { FaGithub, FaFacebookF, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaFacebookF } from "react-icons/fa";
 import About from "../sections/About";
 import Skills from "../sections/Skills";
 import Projects from "../sections/Projects";
 import Contact from "../sections/Contact";
 import { motion } from "motion/react";
 import { Toaster } from "react-hot-toast";
+import { FaXTwitter } from "react-icons/fa6";
+import Footer from "../sections/Footer";
 const MainLayout = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -64,7 +66,7 @@ const MainLayout = () => {
                 href="https://x.com/RashikKhan513"
                 target="_blank"
               >
-                <FaTwitter size={30} />
+                <FaXTwitter size={26} />
               </motion.a>
             </div>
             <div className="bg-secondary h-50 w-[1px]"></div>
@@ -73,7 +75,7 @@ const MainLayout = () => {
           {/* about */}
           <section
             id="about"
-            className="h-[60vh] md:h-[90vh] flex items-center justify-center"
+            className="h-[70vh] md:h-[90vh] flex items-center justify-center"
           >
             <About />
           </section>
@@ -81,7 +83,7 @@ const MainLayout = () => {
           {/* skills */}
           <section
             id="skills"
-            className="md:h-[30vh] lg:h-[70vh] pt-20 flex items-center justify-center lg:pt-30"
+            className="md:h-[70vh] lg:h-[70vh] pt-20 flex items-center justify-center lg:pt-30"
           >
             <Skills />
           </section>
@@ -95,8 +97,11 @@ const MainLayout = () => {
           </section>
 
           {/* contact */}
-          <section id="contact" className=" flex items-center justify-center">
+          <section id="contact" className="flex items-center justify-center">
             <Contact />
+          </section>
+          <section className="lg:w-6/12 w-11/12 mx-auto lg:-mt-50 -mt-30 mb-5">
+            <Footer />
           </section>
         </>
       )}

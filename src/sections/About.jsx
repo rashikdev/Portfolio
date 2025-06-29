@@ -2,19 +2,37 @@ import React from "react";
 import { motion } from "motion/react";
 const About = () => {
   return (
-    <div className="lg:w-11/12 p-3 mx-auto h-fit  md:h-[700px] flex md:mt-20">
-      <div className="flex-1 p-20 hidden lg:block">
-        <div className="w-[80%] h-full border-t-2 border-l-2 border-b-2">
-          <img src={null} alt="" />
+    <div className="lg:w-11/12 p-3 mx-auto h-fit md:h-[700px] flex md:flex-col-reverse md:justify-center lg:flex-row md:mt-20 -mb-30 md:mb-0 -mt-10 lg:mt-0">
+      <div className="flex-1 p-20 md: hidden md:block">
+        <div className="w-[66%] h-full border-t-1 border-l-1 border-b-1 flex items-center border-primary justify-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.8 }}
+            className="flex flex-col items-end gap-7 md:py-8"
+          >
+            <h2 className="leading-none">
+              <span className="text-[200px] font-bold">1</span>
+              <span className="text-[200px] text-primary">.</span>
+            </h2>
+            <div className="text-end text-3xl mr-3">
+              <p>Years</p>
+              <p>Experience</p>
+              <div>
+                <span className="h-[2px] w-20 inline-block bg-secondary mr-14"></span>
+                Coding
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
-      <div className="flex-1 md:p-10 text-center md:text-left">
+      <div className="flex-1 md:pt-10 md:pl-10  text-center md:text-left">
         <h2 className="text-4xl font-bold text-primary">About Me</h2>
         <motion.p
           initial={{ opacity: 0, x: -800 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.3, duration: 1 }}
-          className="mt-6 hidden text-secondary md:block leading-8 lg:leading-7"
+          className="mt-6 hidden text-secondary lg:block leading-8 lg:leading-7"
         >
           Hi, I’m Rashik — a frontend developer who loves turning ideas into
           real, usable web experiences. My programming journey started with
@@ -36,7 +54,11 @@ const About = () => {
           you’re into clean code, beautiful design, or just want to build
           something cool — let’s connect!
         </motion.p>
-        <p className="mt-6 md:hidden text-secondary">
+        <motion.p
+        initial={{ opacity: 0, y: 80 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3, duration: 1 }}
+        className="mt-6 lg:hidden text-secondary">
           Hi, I’m Rashik — a frontend developer who loves building clean,
           responsive, and interactive web interfaces. My journey started with
           curiosity and grew into a passion for crafting smooth user experiences
@@ -45,7 +67,7 @@ const About = () => {
           landing pages. Outside of coding, I’m into football, music, and
           sometimes sketching. I believe creativity off-screen fuels better
           ideas on-screen. Always learning, always building — that’s me.
-        </p>
+        </motion.p>
       </div>
     </div>
   );

@@ -3,6 +3,7 @@ import { motion } from "motion/react";
 import { FaFacebookF, FaGithub, FaTwitter } from "react-icons/fa";
 import heroMd from "../assets/heromd.webp";
 import heroLg from "../assets/herolg.webp";
+import { FaXTwitter } from "react-icons/fa6";
 const Banner = () => {
   return (
     <div className="banner h-screen relative">
@@ -24,7 +25,7 @@ const Banner = () => {
         src={heroMd}
         alt=""
       />
-
+      
       <motion.div
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -42,12 +43,20 @@ const Banner = () => {
             I love turning ideas into user-friendly digital experiences.
           </span>
         </h3>
-        <div>
+        <div className="hidden lg:block">
           <motion.button
             whileTap={{ scale: 0.9 }}
             className="px-4 py-[6px] bg-primary hover:bg-transparent border-1 border-primary cursor-pointer"
           >
-            Let's Connect
+            <a href="#contact">Let's Connect</a>
+          </motion.button>
+        </div>
+        <div className="lg:hidden">
+          <motion.button
+            whileTap={{ scale: 0.9 }}
+            className="px-4 py-[6px] bg-primary hover:bg-transparent border-1 border-primary cursor-pointer"
+          >
+            Resume
           </motion.button>
         </div>
         <div className="fixed flex-col gap-10 top-84 left-5 items-center hidden lg:hidden md:flex">
@@ -63,7 +72,7 @@ const Banner = () => {
               <FaFacebookF size={30} />
             </a>
             <a href="https://x.com/RashikKhan513" target="_blank">
-              <FaTwitter size={30} />
+              <FaXTwitter size={26} />
             </a>
           </div>
           <div className="bg-secondary h-40 w-[1px]"></div>

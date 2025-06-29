@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import {
   FaHtml5,
   FaCss3Alt,
@@ -22,43 +23,63 @@ const skills = {
   ],
   Backend: [
     { name: "Node.js", icon: <FaNodeJs className="text-green-600" /> },
-    { name: "Express.js", icon: <SiExpress className="text-gray-700" /> },
+    { name: "Express.js", icon: <SiExpress className="text-gray-300" /> },
     { name: "MongoDB", icon: <SiMongodb className="text-green-500" /> },
   ],
   Tools: [
-    { name: "GitHub", icon: <FaGithub className="text-black" /> },
+    { name: "GitHub", icon: <FaGithub className="text-white" /> },
     { name: "Figma", icon: <SiFigma className="text-pink-500" /> },
     { name: "Vite", icon: <SiVite className="text-purple-500" /> },
   ],
 };
 
+// Animation Variants
+const containerVariants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 60 },
+  show: { opacity: 1, y: 0, transition: { duration: 1 } },
+};
+
 const Skills = () => {
   return (
-    <div className="md:h-[50vh]">
+    <div className=" md:py-60">
       <div className="md:text-left text-center mb-20 lg:-ml-18">
         <h2 className="text-4xl font-bold text-primary">Skills</h2>
         <p className="text-secondary mt-2">Technologies I work with</p>
       </div>
-      <div className="max-w-5xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-10 px-6">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="show"
+        className="max-w-5xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-10 px-6"
+      >
         {Object.entries(skills).map(([category, items]) => (
-          <div key={category}>
+          <motion.div key={category} variants={itemVariants}>
             <h3 className="text-xl font-semibold mb-4">{category}</h3>
-            <div className="grid grid-cols-2 gap-8">
+            <motion.div className="grid grid-cols-2 gap-8">
               {items.map((skill, idx) => (
-                <div
+                <motion.div
                   key={idx}
-                  className="flex items-center gap-3 bg-white p-4 rounded shadow hover:shadow-md transition"
+                  variants={itemVariants}
+                  className="flex items-center gap-3 p-4 rounded bg-zinc-700 shadow hover:shadow-md border-b-2 border-primary"
                 >
                   <span className="text-2xl">{skill.icon}</span>
-                  <span className="text-black font-medium">
-                    {skill.name}
-                  </span>
-                </div>
+                  <span className="text-white font-medium">{skill.name}</span>
+                </motion.div>
               ))}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };
