@@ -31,7 +31,7 @@ const Banner = () => {
         transition={{ delay: 0.3, duration: 1 }}
         className="absolute lg:bottom-1/7 md:bottom-120 md:space-y-5 -bottom-24 lg:transform -translate-y-1/2 lg:left-40 lg:space-y-8 space-y-3 pl-3 text-white"
       >
-        <p className="text-lg">Front-end Developer</p>
+        <p className="text-lg">Frontend Developer</p>
         <h1 className="text-4xl md:text-7xl font-bold">
           Rashik <span className="text-primary">.</span>
         </h1>
@@ -45,9 +45,9 @@ const Banner = () => {
         <div>
           <motion.button
             whileTap={{ scale: 0.9 }}
-            className="px-6 py-[6px] bg-primary hover:bg-transparent border-1 border-primary cursor-pointer"
+            className="px-4 py-[6px] bg-primary hover:bg-transparent border-1 border-primary cursor-pointer"
           >
-            Resume
+            Let's Connect
           </motion.button>
         </div>
         <div className="fixed flex-col gap-10 top-84 left-5 items-center hidden lg:hidden md:flex">

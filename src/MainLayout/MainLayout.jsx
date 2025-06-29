@@ -7,6 +7,7 @@ import Skills from "../sections/Skills";
 import Projects from "../sections/Projects";
 import Contact from "../sections/Contact";
 import { motion } from "motion/react";
+import { Toaster } from "react-hot-toast";
 const MainLayout = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -20,7 +21,7 @@ const MainLayout = () => {
       {loading ? (
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <h2 className="text-4xl font-bold">
-            <h2 className="loader"></h2>
+            <div className="loader"></div>
           </h2>
         </div>
       ) : (
@@ -99,6 +100,7 @@ const MainLayout = () => {
           </section>
         </>
       )}
+      <Toaster></Toaster>
     </div>
   );
 };

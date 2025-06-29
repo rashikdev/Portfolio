@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <div className="fixed z-50 w-full">
       <nav className="w-11/12 mx-auto flex justify-between gap-6 py-10">
-        <h2 className="text-3xl font-bold lg:hidden">
+        <h2 className="text-3xl font-bold lg:hidden text-white">
           <a href="#">
             Portfolio<span className="text-primary">.</span>
           </a>
