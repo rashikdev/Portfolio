@@ -11,10 +11,11 @@ const About = () => {
       <div className="flex-1 md:p-10 text-center md:text-left">
         <h2 className="text-4xl font-bold text-primary">About Me</h2>
         <motion.p
-        initial={{ opacity: 0, scale: 0.7, y: 100 }}
-        whileInView={{ opacity: 1, scale: 1, y: 0 }}
-        transition={{ delay: 0.3, duration: 1 }}
-        className="mt-6 hidden text-secondary md:block leading-8 lg:leading-7">
+          initial={{ opacity: 0, x: -800 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.3, duration: 1 }}
+          className="mt-6 hidden text-secondary md:block leading-8 lg:leading-7"
+        >
           Hi, I’m Rashik — a frontend developer who loves turning ideas into
           real, usable web experiences. My programming journey started with
           curiosity and late-night Google searches. What began as small tweaks
@@ -28,12 +29,12 @@ const About = () => {
           matter just as much as functionality. I love working on portfolio
           websites, dashboards, landing pages, or anything where frontend
           creativity is key. When I’m not coding, you’ll probably find me
-          playing football, enjoying some music, or sketching whatever comes to
-          mind. I believe taking time away from the screen keeps my ideas fresh
-          and my creativity alive. I’m always learning, building, and looking
-          for new ways to grow — both as a developer and as a person. If you’re
-          into clean code, beautiful design, or just want to build something
-          cool — let’s connect!
+          enjoying some music, exploring random tech, or spending time with my
+          friends. I believe taking time away from the screen keeps my ideas
+          fresh and my creativity alive. I’m always learning, building, and
+          looking for new ways to grow — both as a developer and as a person. If
+          you’re into clean code, beautiful design, or just want to build
+          something cool — let’s connect!
         </motion.p>
         <p className="mt-6 md:hidden text-secondary">
           Hi, I’m Rashik — a frontend developer who loves building clean,

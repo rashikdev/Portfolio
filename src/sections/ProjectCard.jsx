@@ -37,43 +37,50 @@ const ProjectCard = ({ project }) => {
             </li>
           ))}
         </ul>
-        <div className="grid grid-cols-3 md:grid-cols-4 gap-2">
+        <div className="grid grid-cols-3 md:grid-cols-4 gap-3">
           {stack.map((item, idx) => (
             <span
               key={idx}
-              className="bg-primary text- py-1 font-semibold text-center"
+              className="bg-primary py-[2px] font-semibold text-center"
             >
               {item}
             </span>
           ))}
         </div>
         <div className="flex gap-2">
-          <button className="px-6 btn">
+          <button className="px-6 btn border hover:border-primary">
             <a href={live} target="_blank">
               Live Demo
             </a>
           </button>
           <div className="dropdown dropdown-center">
-            <div tabIndex={0} role="button" className="btn">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn border hover:border-primary"
+            >
               Github
             </div>
             <ul
               tabIndex={0}
               className="dropdown-content menu bg-base-100 rounded-box z-1 w-30 p-2 shadow-sm mt-5 space-y-2"
             >
-              <li className="bg-gray-600 font-semibold underline underline-offset-4">
+              <li className="bg-gray-600 font-semibold  underline-offset-4 hover:decoration-primary underline">
                 <a href={github.client} target="_blank">
                   Client Side
                 </a>
               </li>
-              <li className="bg-zinc-700 font-semibold underline underline-offset-4">
+              <li className="bg-zinc-700 font-semibold underline-offset-4 hover:decoration-primary underline">
                 <a href={github.server} target="_blank">
                   Server Side
                 </a>
               </li>
             </ul>
           </div>
-          <button onClick={() => setOpen(true)} className="px-6 btn">
+          <button
+            onClick={() => setOpen(true)}
+            className="px-6 btn border hover:border-primary"
+          >
             Details
           </button>
         </div>

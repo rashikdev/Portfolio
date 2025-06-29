@@ -29,9 +29,9 @@ const Banner = () => {
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 1 }}
-        className="absolute lg:bottom-1/7 md:bottom-120 md:space-y-5 -bottom-24 lg:transform -translate-y-1/2 lg:left-40 lg:space-y-8 space-y-3 pl-3"
+        className="absolute lg:bottom-1/7 md:bottom-120 md:space-y-5 -bottom-24 lg:transform -translate-y-1/2 lg:left-40 lg:space-y-8 space-y-3 pl-3 text-white"
       >
-        <p className="text-lg">Web Developer</p>
+        <p className="text-lg">Front-end Developer</p>
         <h1 className="text-4xl md:text-7xl font-bold">
           Rashik <span className="text-primary">.</span>
         </h1>
@@ -56,10 +56,13 @@ const Banner = () => {
             <a href="https://github.com/rashikdev" target="_blank">
               <FaGithub size={30} />
             </a>
-            <a href="https://facebook.com/" target="_blank">
+            <a
+              href="https://www.facebook.com/share/16Fjh4kbAR/"
+              target="_blank"
+            >
               <FaFacebookF size={30} />
             </a>
-            <a href="https://twitter.com/" target="_blank">
+            <a href="https://x.com/RashikKhan513" target="_blank">
               <FaTwitter size={30} />
             </a>
           </div>

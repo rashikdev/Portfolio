@@ -24,11 +24,19 @@ const Contact = () => {
 
         {/* Right Side - Form */}
         <div>
-          <h3 className="text-2xl md:text-2xl font-semibold mb-6">
-            Let's grab a coffee and jump on <br /> conversation{" "}
+          <h3 className="text-xl font-semibold mb-6">
+            Let’s connect and start a meaningful <br /> conversation{" "}
             <span className="text-red-600">chat with me.</span>
           </h3>
           <form className="space-y-6">
+            <div>
+              <input
+                type="text"
+                required
+                placeholder="Your Name"
+                className="w-full bg-transparent border-b border-gray-400 py-2 px-1 focus:outline-none text-white placeholder-gray-400"
+              />
+            </div>
             <div>
               <input
                 type="email"

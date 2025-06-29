@@ -59,7 +59,7 @@ const Projects = () => {
       live: "https://study-bond-bd1de.web.app/",
       github: {
         client: "https://github.com/rashikdev/StudyBond",
-        server: "",
+        server: "https://github.com/rashikdev/STUDDYBOND_Server",
       },
       challenges: [
         "Managing role-based access control and conditionally rendering components",

@@ -49,7 +49,7 @@ const MainLayout = () => {
                 transition={{ delay: 0.4 }}
                 whileHover={{ scale: 1.3 }}
                 whileTap={{ scale: 0.9 }}
-                href="https://facebook.com/"
+                href="https://www.facebook.com/share/16Fjh4kbAR/"
                 target="_blank"
               >
                 <FaFacebookF size={30} />
@@ -60,7 +60,7 @@ const MainLayout = () => {
                 transition={{ delay: 0.5 }}
                 whileHover={{ scale: 1.3 }}
                 whileTap={{ scale: 0.9 }}
-                href="https://twitter.com/"
+                href="https://x.com/RashikKhan513"
                 target="_blank"
               >
                 <FaTwitter size={30} />
