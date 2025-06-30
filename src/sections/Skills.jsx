@@ -6,6 +6,7 @@ import {
   FaNodeJs,
   FaGithub,
 } from "react-icons/fa";
+import { IoLogoJavascript } from "react-icons/io";
 import {
   SiTailwindcss,
   SiMongodb,
@@ -18,7 +19,10 @@ const skills = {
   Frontend: [
     { name: "HTML5", icon: <FaHtml5 className="text-orange-600" /> },
     { name: "CSS3", icon: <FaCss3Alt className="text-blue-500" /> },
-    { name: "Tailwind", icon: <SiTailwindcss className="text-cyan-400" /> },
+    {
+      name: "JavaScript",
+      icon: <IoLogoJavascript className="text-yellow-400" />,
+    },
     { name: "React", icon: <FaReact className="text-blue-400" /> },
   ],
   Backend: [

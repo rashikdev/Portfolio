@@ -15,7 +15,7 @@ const Navbar = () => {
         <ul className="items-center gap-12 hidden lg:flex">
           <li className="text-3xl font-bold">
             <a href="#" onClick={() => setActiveLink("home")}>
-              Portfolio<span className="text-primary">.</span>
+              Portfolio<span className="text-primary"> .</span>
             </a>
           </li>
           <li>

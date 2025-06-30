@@ -68,7 +68,7 @@ const Contact = () => {
               <span>
                 <FaWhatsapp color="gray" />
               </span>
-              +880 1318-142118{" "}
+              +880 1974-707143{" "}
             </p>
             <p className="text-gray-500 flex items-center gap-2">
               <span>
