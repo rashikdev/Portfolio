@@ -1,8 +1,6 @@
-import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
 import { motion } from "motion/react";
-import { FaSquareWhatsapp } from "react-icons/fa6";
 import { FaWhatsapp } from "react-icons/fa";
 import { MdAlternateEmail, MdOutlineLocationOn } from "react-icons/md";
 const Contact = () => {

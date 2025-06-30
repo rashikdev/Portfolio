@@ -77,7 +77,7 @@ const Footer = () => {
         >
           <span
             onDoubleClick={() => setShow(false)}
-            className="absolute text-5xl leading-0 right-2 -top-1 text-primary"
+            className="absolute text-5xl leading-0 right-4 -top-1 text-primary"
           >
             .
           </span>
