@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "motion/react";
-import { FaFacebookF, FaGithub, FaTwitter } from "react-icons/fa";
+import { FaFacebookF, FaGithub, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import heroMd from "../assets/heromd.webp";
 import heroLg from "../assets/herolg.webp";
 import { FaXTwitter } from "react-icons/fa6";
@@ -61,11 +61,28 @@ const Banner = () => {
             </a>
           </motion.button>
         </div>
+        <div className="fixed -top-80 flex flex-col gap-8 text-2xl md:hidden">
+          <a href="https://github.com/rashikdev" target="_blank">
+            <FaGithub size={30} />
+          </a>
+          <a href="https://github.com/rashikdev" target="_blank">
+            <FaLinkedinIn size={30} />
+          </a>
+          <a href="https://www.facebook.com/share/16Fjh4kbAR/" target="_blank">
+            <FaFacebookF size={30} />
+          </a>
+          <a href="https://x.com/RashikKhan513" target="_blank">
+            <FaXTwitter size={26} />
+          </a>
+        </div>
         <div className="fixed flex-col gap-10 top-84 left-5 items-center hidden lg:hidden md:flex">
           <div className="bg-secondary h-40 w-[1px]"></div>
           <div className="flex flex-col gap-8 text-2xl">
             <a href="https://github.com/rashikdev" target="_blank">
               <FaGithub size={30} />
+            </a>
+            <a href="https://github.com/rashikdev" target="_blank">
+              <FaLinkedinIn size={30} />
             </a>
             <a
               href="https://www.facebook.com/share/16Fjh4kbAR/"

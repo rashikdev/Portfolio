@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import Home from "../sections/Home";
-import { FaGithub, FaFacebookF } from "react-icons/fa";
+import { FaGithub, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import About from "../sections/About";
 import Skills from "../sections/Skills";
 import Projects from "../sections/Projects";
@@ -17,6 +17,7 @@ const MainLayout = () => {
       setLoading(false);
     }, 1000);
   });
+
   return (
     <div className="overflow-x-hidden selection:bg-primary selection:text-white">
       <Navbar />
@@ -52,6 +53,17 @@ const MainLayout = () => {
                 transition={{ delay: 0.4 }}
                 whileHover={{ scale: 1.3 }}
                 whileTap={{ scale: 0.9 }}
+                href="https://www.linkedin.com/in/rashikdev"
+                target="_blank"
+              >
+                <FaLinkedinIn size={30} />
+              </motion.a>
+              <motion.a
+                initial={{ opacity: 0, x: -100 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.5 }}
+                whileHover={{ scale: 1.3 }}
+                whileTap={{ scale: 0.9 }}
                 href="https://www.facebook.com/share/16Fjh4kbAR/"
                 target="_blank"
               >
@@ -60,7 +72,7 @@ const MainLayout = () => {
               <motion.a
                 initial={{ opacity: 0, x: -100 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.5 }}
+                transition={{ delay: 0.6 }}
                 whileHover={{ scale: 1.3 }}
                 whileTap={{ scale: 0.9 }}
                 href="https://x.com/RashikKhan513"
