@@ -37,7 +37,7 @@ const Footer = () => {
       >
         <footer className="w-full backdrop-blur-sm md:border-b md:pb-4 rounded-2xl border-primary lg:py-8 mt-16 ">
           <div className="lg:w-11/12 mx-auto text-center">
-            <h3 className="md:text-lg font-semibold tracking-wide lg:mb-2 mb-3 border-l-2 border-r-2 border-primary md:mx-14 mx-5">
+            <h3 className="md:text-lg font-semibold tracking-wide lg:mb-2 mb-3 border-l-2 border-r-2 border-primary md:mx-14 mx-5 text-white">
               <span className="text-primary font-bold underline underline-offset-3">
                 Let’s
               </span>{" "}

@@ -25,7 +25,7 @@ const Banner = () => {
         src={heroMd}
         alt=""
       />
-      
+
       <motion.div
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -56,7 +56,9 @@ const Banner = () => {
             whileTap={{ scale: 0.9 }}
             className="px-4 py-[6px] bg-primary hover:bg-transparent border-1 border-primary cursor-pointer"
           >
-            Resume
+            <a href="/Resume.pdf" download="Rashik_Resume.pdf">
+              Resume
+            </a>
           </motion.button>
         </div>
         <div className="fixed flex-col gap-10 top-84 left-5 items-center hidden lg:hidden md:flex">

@@ -79,7 +79,9 @@ const Navbar = () => {
           whileTap={{ scale: 0.9 }}
           className="px-6 py-[6px] bg-primary hover:bg-transparent border-1 border-primary cursor-pointer hidden lg:block"
         >
-          Resume
+          <a href="/Resume.pdf" download="Md_Rashik_Resume.pdf">
+            Resume
+          </a>
         </motion.button>
         <button
           onClick={() => setOpen(true)}
@@ -134,7 +136,9 @@ const Navbar = () => {
               whileTap={{ scale: 0.9 }}
               className="w-22 py-[4px] text-lg bg-primary hover:bg-black border-1 border-primary cursor-pointer"
             >
-              Resume
+              <a href="/Resume.pdf" download="Md_Rashik_Resume.pdf">
+                Resume
+              </a>
             </motion.button>
           </ul>
         </motion.div>
