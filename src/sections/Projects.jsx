@@ -2,10 +2,55 @@ import ProjectCard from "./ProjectCard";
 import project1 from "../assets/project1.png";
 import project2 from "../assets/project2.png";
 import project3 from "../assets/project3.png";
+// import p1dashboard from "module";
 const Projects = () => {
   const projects = [
     {
       id: 1,
+      title: "Trips Bangladesh",
+      image: project3,
+      description_small:
+        "Trips is a full-featured Bangladeshi tourism platform connecting tourists and guides with booking, storytelling, and admin management tools.",
+      description_large:
+        "Trips is a comprehensive MERN-stack tourism platform for discovering, exploring, and booking travel experiences across Bangladesh. It enables users to book tour packages with verified guides, share their travel stories, and manage bookings. The admin panel includes detailed statistics and user management features. The platform also supports Stripe payments, role-based dashboards, and responsive UI with TailwindCSS. Animations and transitions are handled with Framer Motion for a modern feel.",
+      features: [
+        "Tour package booking with tour guide selection",
+        "Stripe payment integration",
+        "Tourist stories with Facebook share",
+        "Role-based dashboards (Admin, Tour Guide, Tourist)",
+        "Tour guide application & assignment system",
+        "Admin panel with stats and user management",
+        "Responsive UI with protected routes",
+      ],
+      stack: [
+        "React",
+        "TailwindCSS",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Motion",
+        "React Router",
+        "Firebase Auth",
+        "Stripe",
+      ],
+      live: "https://travelbd-ea2e0.web.app/",
+      github: {
+        client: "https://github.com/rashikdev/travelbd-client",
+        server: "https://github.com/rashikdev/travelbd-server",
+      },
+      challenges: [
+        "Handling conditional UI and logic based on user roles",
+        "Synchronizing tour guide assignment status and bookings flow",
+        "Managing dynamic dashboard components and protected routes",
+      ],
+      improvements: [
+        "Implement in-app notifications for booking updates",
+        "Add reviews and ratings for guides and packages",
+        "Improve accessibility and SEO for better reach",
+      ],
+    },
+    {
+      id: 2,
       title: "HobbyHub",
       image: project2,
       description_small:
@@ -42,7 +87,7 @@ const Projects = () => {
       ],
     },
     {
-      id: 2,
+      id: 3,
       title: "STUDY BOND",
       image: project1,
       description_small:
@@ -68,37 +113,6 @@ const Projects = () => {
       improvements: [
         "Integrate live group chat with Socket.io",
         "Add calendar-based assignment deadlines and reminders",
-      ],
-    },
-    {
-      id: 3,
-      title: "App Store",
-      image: project3,
-      description_small:
-        "A curated frontend app showcase where users can explore and rate different projects without needing to download or install anything.",
-      description_large:
-        "App Store is a frontend app rating platform where users can browse through a collection of frontend applications, view details, and rate them based on their experience. The project emphasizes clean UI, dynamic routing, user feedback through rating systems, and seamless navigation. No downloads or installations are required—it's all about exploring ideas and giving feedback. Ideal for showcasing frontend-only projects.",
-      features: [
-        "Frontend app preview",
-        "Rating system with user feedback",
-        "App detail pages",
-        "Smooth navigation & UX",
-        "Fully responsive layout",
-        "User login & authentication",
-      ],
-      stack: ["React", "TailwindCSS", "DaisyUI"],
-      live: "https://app-store-cb5da.web.app/",
-      github: {
-        client: "https://github.com/rashikdev/App-Store",
-        server: "",
-      },
-      challenges: [
-        "Handling rating state per user without a full backend",
-        "Ensuring unique ratings per app per user and preventing spam refresh",
-      ],
-      improvements: [
-        "Add filter & sort by rating or category",
-        "Integrate backend for persistent user ratings and review comments",
       ],
     },
   ];

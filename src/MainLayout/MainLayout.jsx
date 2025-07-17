@@ -22,7 +22,7 @@ const MainLayout = () => {
     <div className="overflow-x-hidden selection:bg-primary selection:text-white">
       <Navbar />
       {loading ? (
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black w-full h-full flex items-center justify-center">
           <h2 className="text-4xl font-bold">
             <div className="loader"></div>
           </h2>
@@ -35,7 +35,7 @@ const MainLayout = () => {
           {/* social links */}
           <div className="fixed lg:top-1/7 lg:left-10 flex-col md:top-1/2 md:left-10 gap-10 items-center hidden lg:flex">
             <div className="bg-secondary h-50 w-[1px]"></div>
-            <div className="flex flex-col gap-8 text-2xl">
+            <div className="flex flex-col gap-8 text-2xl text-gray-300">
               <motion.a
                 initial={{ opacity: 0, x: -100 }}
                 animate={{ opacity: 1, x: 0 }}

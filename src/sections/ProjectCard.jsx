@@ -23,15 +23,15 @@ const ProjectCard = ({ project }) => {
       initial={{ y: 150 }}
       whileInView={{ y: 0 }}
       transition={{ duration: 0.8, delay: 0.2 }}
-      className="min-h-[400px] lg:w-[78vw] p-5"
+      className="min-h-[400px] lg:h-[560px] lg:w-[78vw] p-5"
     >
       <Tilt
         tiltMaxAngleX={5}
         tiltMaxAngleY={5}
         glareEnable={false}
-        className="w-full shadow-2xl rounded-xl bg-zinc-900"
+        className="w-full shadow-2xl rounded-xl "
       >
-        <div className="flex flex-col lg:flex-row justify-between items-center gap-5 p-5">
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-5 p-5">
           <div className="flex-1 rounded border-l-2 border-primary p-3">
             <img
               src={image}
@@ -43,10 +43,10 @@ const ProjectCard = ({ project }) => {
           <div className="flex-1 flex flex-col justify-between px-3 md:px-7 space-y-6">
             <h2 className="text-2xl font-bold text-primary">{title}</h2>
             <p className="text-secondary">{description_small}</p>
-            <ul>
+            <ul className="space-y-2">
               {features.map((feature, idx) => (
-                <li key={idx} className="font-semibold text-white">
-                  {"=> "} {feature}
+                <li key={idx} className="font-semibold text-white flex gap-2 leading-5">
+                  <span className="text-primary">{"=>"}</span> <p>{feature}</p>
                 </li>
               ))}
             </ul>

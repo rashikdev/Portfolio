@@ -5,8 +5,8 @@ const Navbar = () => {
   const [activeLink, setActiveLink] = useState("home");
 
   return (
-    <div className="fixed z-50 w-full">
-      <nav className="w-11/12 mx-auto flex justify-between gap-6 py-10">
+    <div className="fixed z-50 w-full text-white md:top-10">
+      <nav className="w-11/12 mx-auto flex justify-between gap-6 backdrop-blur-[4px] py-4">
         <h2 className="text-3xl font-bold lg:hidden text-white">
           <a href="#">
             Portfolio<span className="text-primary">.</span>
@@ -79,7 +79,7 @@ const Navbar = () => {
           whileTap={{ scale: 0.9 }}
           className="px-6 py-[6px] bg-primary hover:bg-transparent border-1 border-primary cursor-pointer hidden lg:block"
         >
-          <a href="/Resume.pdf" download="Md_Rashik_Resume.pdf">
+          <a href="/Resume.pdf" download="Resume of Rashik.pdf" className="w-full h-full">
             Resume
           </a>
         </motion.button>
@@ -136,7 +136,7 @@ const Navbar = () => {
               whileTap={{ scale: 0.9 }}
               className="w-22 py-[4px] text-lg bg-primary hover:bg-black border-1 border-primary cursor-pointer"
             >
-              <a href="/Resume.pdf" download="Md_Rashik_Resume.pdf">
+              <a href="/Resume.pdf" download="Resume of Rashik.pdf">
                 Resume
               </a>
             </motion.button>
