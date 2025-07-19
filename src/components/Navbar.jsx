@@ -1,8 +1,28 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { motion } from "motion/react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("home");
+
+  const containerRef = useRef(null);
+  useGSAP(() => {
+    gsap.from(".logo", {
+      y: -100,
+      opacity: 0,
+      duration: 1,
+      ease: "power2.out",
+    });
+    gsap.from(".item", {
+      x: 600,
+      opacity: 0,
+      duration: 1,
+      delay: 2,
+      stagger: 0.2,
+      ease: "power2.inOut",
+    });
+  }, [containerRef]);
 
   return (
     <div className="fixed z-50 w-full text-white md:top-10">
@@ -13,12 +33,12 @@ const Navbar = () => {
           </a>
         </h2>
         <ul className="items-center gap-12 hidden lg:flex">
-          <li className="text-3xl font-bold">
+          <li className="text-3xl font-bold logo">
             <a href="#" onClick={() => setActiveLink("home")}>
               Portfolio<span className="text-primary"> .</span>
             </a>
           </li>
-          <li>
+          <li className="item">
             <a
               href="#home"
               onClick={() => setActiveLink("home")}
@@ -29,7 +49,7 @@ const Navbar = () => {
               HOME
             </a>
           </li>
-          <li>
+          <li className="item">
             <a
               href="#about"
               onClick={() => setActiveLink("about")}
@@ -40,7 +60,7 @@ const Navbar = () => {
               ABOUT
             </a>
           </li>
-          <li>
+          <li className="item">
             <a
               href="#skills"
               onClick={() => setActiveLink("skills")}
@@ -51,7 +71,7 @@ const Navbar = () => {
               SKILLS
             </a>
           </li>
-          <li>
+          <li className="item">
             <a
               href="#projects"
               onClick={() => setActiveLink("projects")}
@@ -62,7 +82,7 @@ const Navbar = () => {
               PROJECTS
             </a>
           </li>
-          <li>
+          <li className="item">
             <a
               href="#contact"
               onClick={() => setActiveLink("contact")}
@@ -79,7 +99,11 @@ const Navbar = () => {
           whileTap={{ scale: 0.9 }}
           className="px-6 py-[6px] bg-primary hover:bg-transparent border-1 border-primary cursor-pointer hidden lg:block"
         >
-          <a href="/Resume.pdf" download="Resume of Rashik.pdf" className="w-full h-full">
+          <a
+            href="/Resume.pdf"
+            download="Resume of Rashik.pdf"
+            className="w-full h-full"
+          >
             Resume
           </a>
         </motion.button>

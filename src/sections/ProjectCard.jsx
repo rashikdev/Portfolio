@@ -45,7 +45,10 @@ const ProjectCard = ({ project }) => {
             <p className="text-secondary">{description_small}</p>
             <ul className="space-y-2">
               {features.map((feature, idx) => (
-                <li key={idx} className="font-semibold text-white flex gap-2 leading-5">
+                <li
+                  key={idx}
+                  className="font-semibold text-white flex gap-2 leading-5"
+                >
                   <span className="text-primary">{"=>"}</span> <p>{feature}</p>
                 </li>
               ))}
@@ -106,10 +109,15 @@ const ProjectCard = ({ project }) => {
 
       {/* Modal */}
       {open && (
-        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
-          <div className="bg-black p-6 rounded-xl w-full max-w-4xl h-[60vh] shadow-lg relative overflow-y-auto text-white">
+        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 backdrop-blur-sm">
+          <motion.div
+            initial={{ opacity: 0, y: 200 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="bg-black p-6 rounded-xl w-full max-w-4xl h-[60vh] shadow-lg relative overflow-y-auto text-white"
+          >
             <button
-              className="absolute top-2 right-2 text-lg font-bold cursor-pointer"
+              className="absolute top-2 right-2 text-lg font-bold cursor-pointer text-primary"
               onClick={() => setOpen(false)}
             >
               ✕
@@ -130,7 +138,7 @@ const ProjectCard = ({ project }) => {
                 <li key={idx}>{improvement}</li>
               ))}
             </ul>
-          </div>
+          </motion.div>
         </div>
       )}
     </motion.div>

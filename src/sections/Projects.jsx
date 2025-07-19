@@ -35,8 +35,8 @@ const Projects = () => {
       ],
       live: "https://travelbd-ea2e0.web.app/",
       github: {
-        client: "https://github.com/rashikdev/travelbd-client",
-        server: "https://github.com/rashikdev/travelbd-server",
+        client: "https://github.com/rashikdev/Trips-Bangladesh-Client",
+        server: "https://github.com/rashikdev/Trips-Bangladesh-Server",
       },
       challenges: [
         "Handling conditional UI and logic based on user roles",
